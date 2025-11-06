@@ -1,0 +1,55 @@
+{
+    "name": "bhhaskin/laravel-status",
+    "description": "Health check API endpoint for Laravel applications.",
+    "version": "0.1.0",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Bryan Haskin",
+            "email": "bhhaskin@bitsofsimplicity.com"
+        }
+    ],
+    "keywords": [
+        "laravel",
+        "health-check",
+        "status",
+        "api"
+    ],
+    "require": {
+        "php": "^8.1",
+        "illuminate/routing": "^10.0 || ^11.0",
+        "illuminate/support": "^10.0 || ^11.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0 || ^9.0",
+        "pestphp/pest": "^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Bhhaskin\\LaravelStatus\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Bhhaskin\\LaravelStatus\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Bhhaskin\\LaravelStatus\\StatusServiceProvider"
+            ]
+        }
+    },
+    "scripts": {
+        "test": "pest"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true,
+    "config": {
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    }
+}
