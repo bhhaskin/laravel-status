@@ -28,3 +28,15 @@ test('health endpoint returns 503 when database check fails', function () {
     $data = $response->json();
     expect($data['status'])->toBe('error');
 });
+
+test('health endpoint returns no-cache headers', function () {
+    $response = $this->get('/health');
+
+    $cacheControl = $response->headers->get('Cache-Control');
+    expect($cacheControl)->toContain('no-cache');
+    expect($cacheControl)->toContain('no-store');
+    expect($cacheControl)->toContain('must-revalidate');
+
+    $response->assertHeader('Pragma', 'no-cache');
+    $response->assertHeader('Expires', '0');
+});

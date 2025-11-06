@@ -1,7 +1,7 @@
 {
     "name": "bhhaskin/laravel-status",
     "description": "Health check API endpoint for Laravel applications.",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "library",
     "license": "MIT",
     "authors": [

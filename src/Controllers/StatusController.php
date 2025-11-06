@@ -33,7 +33,10 @@ class StatusController extends Controller
 
         $statusCode = $status === 'ok' ? 200 : 503;
 
-        return response()->json($response, $statusCode);
+        return response()->json($response, $statusCode)
+            ->header('Cache-Control', 'no-cache, no-store, must-revalidate')
+            ->header('Pragma', 'no-cache')
+            ->header('Expires', '0');
     }
 
     protected function checkDatabase(): array
